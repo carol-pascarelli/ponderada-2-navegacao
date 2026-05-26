@@ -1,4 +1,4 @@
-//
+
 //  ListaView.swift
 //  ponderada2
 //
@@ -11,18 +11,12 @@ struct ListaView: View {
         NavigationStack {
             VStack(spacing: 16) {
                 
-                // TODO 1: ShowCard para naruto
-                //         + NavigationLink -> NarutoDetailView
-                ShowCard(programa: naruto)
- 
-                // TODO 2: ShowCard para avatar
-                //         + NavigationLink -> AvatarDetailView
-                ShowCard(programa: avatar)
- 
-                // TODO 3: ShowCard para strangerThings
-                //         + NavigationLink -> StrangerDetailView
-                ShowCard(programa: strangerThings)
-                    
+                ForEach(programas, id: \.nome) { programa in
+                    NavigationLink(
+                        destination: ProgramaDetailView(programa: programa)){
+                            ShowCard(programa: programa)
+                        }
+                }
             }
             .padding()
             .navigationTitle("Programas")
