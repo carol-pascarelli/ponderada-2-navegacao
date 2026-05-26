@@ -13,7 +13,7 @@ struct ShowCard: View {
     let programa: Programa
     
     var body: some View {
-        NavigationLink(destination: getNextView(nome: programa.nome) ) {
+        NavigationLink(destination: getNextView(nome: programa.nome)) {
             
             HStack(spacing: 12) {
                 
@@ -25,7 +25,7 @@ struct ShowCard: View {
                 
                 // TODO B: thumbnail com emoji
                 RoundedRectangle(cornerRadius: 5)
-                    .fill(color).opacity(0.4)
+                    .fill(color.opacity(0.4))
                     .overlay(
                         Text(programa.emoji).font(.system(size: 60))
                     )
@@ -65,6 +65,7 @@ struct ShowCard: View {
             }
             .background(Color(.systemBackground))
             .cornerRadius(16)
+            .shadow(radius: 2)
         }
     }
 }
@@ -155,5 +156,4 @@ func getNextView (nome : String) -> some View {
         StrangerDetailView()
     }
 }
-
 
