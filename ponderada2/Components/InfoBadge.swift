@@ -31,7 +31,7 @@ struct InfoBagde: View {
                 .font(.headline).bold(true)
                 .foregroundStyle(Color(.black))
             Text("Sinopse")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title)
             
             Text(programa.sinopse)
                 .font(.subheadline)
@@ -39,7 +39,7 @@ struct InfoBagde: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 4)
             Text("Informações")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.title/)
             HStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.orange).opacity(0.4)
