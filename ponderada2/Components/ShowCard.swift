@@ -13,8 +13,7 @@ struct ShowCard: View {
     let programa: Programa
     
     var body: some View {
-        NavigationLink(destination: getNextView(nome: programa.nome)) {
-            
+        
             HStack(spacing: 12) {
                 
                 let color = getColor(tipo: programa.tipo)
@@ -68,7 +67,6 @@ struct ShowCard: View {
             .shadow(radius: 2)
         }
     }
-}
 
 
 func getColor(tipo : String) -> Color{
