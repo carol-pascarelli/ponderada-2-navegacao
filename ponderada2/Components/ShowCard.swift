@@ -11,10 +11,10 @@ import SwiftUI
 
 struct ShowCard: View {
     let programa: Programa
- 
+    
     var body: some View {
-        NavigationLink(destination: getNextView(nome: programa.nome) {
-        
+        NavigationLink(destination: getNextView(nome: programa.nome) ) {
+            
             HStack(spacing: 12) {
                 
                 let color = getColor(tipo: programa.tipo)
@@ -155,3 +155,5 @@ func getNextView (nome : String) -> some View {
         StrangerDetailView()
     }
 }
+
+
