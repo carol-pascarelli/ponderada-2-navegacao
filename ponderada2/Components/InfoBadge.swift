@@ -29,6 +29,12 @@ struct InfoBagde: View {
                 
                 Text(programa.emoji)
                     .font(.system(size: 100))
+                    .offset(y: -20)
+                
+                Image(systemName: "chevron.left")
+                    .foregroundStyle(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 VStack(alignment: .leading, spacing: 8) {
                     
@@ -51,7 +57,7 @@ struct InfoBagde: View {
                 .frame(maxHeight: .infinity, alignment: .bottomLeading)
             }
             Text("Sinopse")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.headline)
             
             Text(programa.sinopse)
                 .font(.subheadline)
@@ -59,7 +65,7 @@ struct InfoBagde: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 4)
             Text("Informações")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .font(.headline)
             HStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.orange).opacity(0.4)
@@ -67,10 +73,12 @@ struct InfoBagde: View {
                     .overlay { 
                         VStack {
                             Image(systemName: "tv")
+                                .font(.title2)
                             Text("\(programa.episodios)")
-                                .font(.title)
+                                .font(.title2)
+                                .bold()
                             Text("Episodios")
-                                .font(.title)
+                                .font(.footnote)
                         }
                     }
                 RoundedRectangle(cornerRadius: 12)
@@ -79,10 +87,12 @@ struct InfoBagde: View {
                     .overlay { 
                         VStack {
                             Image(systemName: "square.stack")
+                                .font(.title2)
                             Text("\(programa.temporadas)")
-                                .font(.title)
+                                .font(.title2)
+                                .bold()
                             Text("Temporadas")
-                                .font(.title)
+                                .font(.footnote)
                         }
                     }
                 RoundedRectangle(cornerRadius: 12)
@@ -91,10 +101,12 @@ struct InfoBagde: View {
                     .overlay { 
                         VStack {
                             Image(systemName: "checkmark.circle")
+                                .font(.title2)
                             Text(programa.status)
-                                .font(.title)
+                                .font(.title2)
+                                .bold()
                             Text("Status")
-                                .font(.title)
+                                .font(.footnote)
                         }
                     }
                 
@@ -104,7 +116,7 @@ struct InfoBagde: View {
             
             VStack(alignment: .leading, spacing: 10) {
                 Text("Personagens Principais")
-                    .font(.title2)
+                    .font(.headline)
                     .bold()
                     .padding(.top, 10)
                 
