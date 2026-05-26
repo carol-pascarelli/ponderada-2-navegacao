@@ -113,6 +113,24 @@ struct InfoBagde: View {
                 }
             }
             .padding(.horizontal, 16)
+            
+            Button(action: {
+                print("Pesquise no google")
+            }) {
+                Text("Ver episódios")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity) 
+                    .frame(height: 50)
+                    .background(color)
+                    .cornerRadius(12)
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 20) 
+            .padding(.bottom, 20) 
+                
+                
+            
         }
     }
 }
