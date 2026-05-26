@@ -27,9 +27,6 @@ struct InfoBagde: View {
                     endPoint: .bottom
                 )
                 
-                Text(programa.emoji)
-                    .font(.system(size: 100))
-                    .offset(y: -20)
                 
                 Image(systemName: "chevron.left")
                     .foregroundStyle(.white)
@@ -37,6 +34,10 @@ struct InfoBagde: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 
                 VStack(alignment: .leading, spacing: 8) {
+                    Text(programa.emoji)
+                        .font(.system(size: 100))
+                        .offset(y: -20)
+                    
                     
                     Capsule()
                         .fill(.white)
