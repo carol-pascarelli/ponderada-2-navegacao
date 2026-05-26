@@ -124,11 +124,9 @@ Apesar disso, a atividade permitiu consolidar o entendimento sobre a construçã
 
 ### Tela de Cards
 
----
+<img src="Untitled.png" alt="Tela Cards" width="400">
 
 ### Tela de Infos
 
 
----
-
-### Navegação entre telas
+<img src="Untitled2.png" alt="Tela Infobadge" width="400">
