@@ -14,24 +14,44 @@ struct InfoBagde: View {
     var body: some View {
         let color = getColor(tipo: programa.tipo)
         VStack {
-            Text(programa.emoji).font(.system(size: 60))
-            Capsule()
-                .fill(color)
-                .frame(width: 100, height: 30)
-                .padding(.leading, 10)
-                .padding(.top, 10)
-                .padding(.bottom, 10)
-                .padding(.trailing, 10)
-                .overlay(
-                    Text(programa.tipo)
-                        .font(.title3)
-                        .foregroundStyle(Color(.black))
+            
+            ZStack(alignment: .bottomLeading) {
+                
+                Rectangle()
+                    .fill(color)
+                    .frame(height: 250)
+                
+                LinearGradient(
+                    colors: [.clear, .black.opacity(0.7)],
+                    startPoint: .top,
+                    endPoint: .bottom
                 )
-            Text(programa.nome)
-                .font(.headline).bold(true)
-                .foregroundStyle(Color(.black))
+                
+                Text(programa.emoji)
+                    .font(.system(size: 100))
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    
+                    Capsule()
+                        .fill(.white)
+                        .frame(width: 100, height: 30)
+                        .overlay(
+                            Text(programa.tipo)
+                                .font(.subheadline)
+                                .foregroundStyle(color)
+                        )
+                    
+                    Text(programa.nome)
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundStyle(.white)
+                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxHeight: .infinity, alignment: .bottomLeading)
+            }
             Text("Sinopse")
-                .font(.title)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             
             Text(programa.sinopse)
                 .font(.subheadline)
@@ -39,7 +59,7 @@ struct InfoBagde: View {
                 .multilineTextAlignment(.center)
                 .padding(.top, 4)
             Text("Informações")
-                .font(.title/)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             HStack {
                 RoundedRectangle(cornerRadius: 12)
                     .fill(.orange).opacity(0.4)
@@ -96,4 +116,3 @@ struct InfoBagde: View {
         }
     }
 }
-
