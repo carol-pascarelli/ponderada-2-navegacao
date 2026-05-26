@@ -1,3 +1,4 @@
+
 //
 //  InfoBadge.swift
 //  ponderada2
@@ -31,7 +32,7 @@ struct InfoBagde: View {
                 .foregroundStyle(Color(.black))
             Text("Sinopse")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-    
+            
             Text(programa.sinopse)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -76,29 +77,22 @@ struct InfoBagde: View {
                                 .font(.title)
                         }
                     }
-        
+                
                 
                 
             }
             
-            Text("Personagens Principais")
-            ForEach(programa.personagens, id: \.nome) { personagem in
-                HStack {
-                    Text(personagem.emoji)
-                    VStack(alignment: .leading) {
-                        Text(personagem.nome)
-                            .bold()
-                        Text(personagem.papel)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                    Spacer()
+            VStack(alignment: .leading, spacing: 10) {
+                Text("Personagens Principais")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top, 10)
+                
+                ForEach(programa.personagens, id: \.nome) { personagem in
+                    CharacterRow(personagem: personagem)
                 }
-                .padding(8)
-                .background(Color(.secondarySystemBackground))
-                .cornerRadius(10)
             }
-        .padding(.top, 10)
+            .padding(.horizontal, 16)
         }
     }
 }
